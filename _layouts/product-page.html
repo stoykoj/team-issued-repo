@@ -4,19 +4,43 @@ layout: default
 
 <div class="container" style="margin-bottom:10%;">
     <div class="row">
+        {% if page.title %}
+        <h3><b>{{ page.title }}</b></h3>
+        {% else %}
+        <div>Title Coming Soon</div>
+        {% endif %}
+    </div>
+    <div class="row">
+        </br>
+    </div>
+    <div class="row">
         <div class="col-sm-6">
             {% if page.img %}
             <img style="width:100%;" src={{ page.img }} />
             {% else %}
-            <div>blah</div>
+            <div>Image Coming Soon</div>
             {% endif %}
         </div>
         <div class="col-sm-6">
             {% if page.description %}
             <div>{{ page.description }}</div>
             {% else %}
-            <div>Description</div>
+            <div>Description Coming Soon</div>
             {% endif %}
         </div>
     </div>
+    <!--<div class="row">-->
+        <!--<div class="col-sm-6">-->
+            <!--{% if page.description_array %}-->
+            <!--<script>-->
+                <!--var descriptions = {{ page.description_array }}-->
+                <!--for (var i=0; i < descriptions.length; i++) {-->
+                    <!--console.log(descriptions[i]);-->
+                <!--}-->
+            <!--</script>-->
+            <!--{% else %}-->
+
+            <!--{% endif %}-->
+        <!--</div>-->
+    <!--</div>-->
 </div>

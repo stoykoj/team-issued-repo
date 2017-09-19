@@ -2,12 +2,11 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-a.product-link {
+a.black-link {
     color: black;
-    font-size: 20px;
 }
 
-a.product-link:hover {
+a.black-link:hover {
     text-decoration: none;
     color: black;
     opacity: 0.6;
@@ -15,4 +14,12 @@ a.product-link:hover {
 
 .center-text {
     text-align: center;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    background: #E3E3E3;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

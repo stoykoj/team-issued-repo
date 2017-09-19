@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="container" style="margin-bottom:10%;">
+    <div class="row">
+        <div class="col-sm-6">
+            {% if page.img %}
+            <img style="width:100%;" src={{ page.img }} />
+            {% else %}
+            <div>blah</div>
+            {% endif %}
+        </div>
+        <div class="col-sm-6">
+            {% if page.description %}
+            <div>{{ page.description }}</div>
+            {% else %}
+            <div>Description</div>
+            {% endif %}
+        </div>
+    </div>
+</div>

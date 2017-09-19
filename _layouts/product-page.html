@@ -4,43 +4,31 @@ layout: default
 
 <div class="container" style="margin-bottom:10%;">
     <div class="row">
-        {% if page.title %}
-        <h3><b>{{ page.title }}</b></h3>
-        {% else %}
-        <div>Title Coming Soon</div>
-        {% endif %}
-    </div>
-    <div class="row">
         </br>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            {% if page.img %}
-            <img style="width:100%;" src={{ page.img }} />
+            {% if page.images %}
+            <img style="width:100%;" src={{ page.images[0] }} />
             {% else %}
             <div>Image Coming Soon</div>
             {% endif %}
         </div>
-        <div class="col-sm-6">
-            {% if page.description %}
-            <div>{{ page.description }}</div>
+        <div class="col-sm-4">
+            {% if page.title %}
+            <h3><b>{{ page.title }}</b></h3>
             {% else %}
-            <div>Description Coming Soon</div>
+            <div>Title Coming Soon</div>
             {% endif %}
+            </br>
+            <ul>
+                {% for item in page.description_array %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            {% for img in page.images %}
+            <a href="#"><img style="width:30%" src={{ img }} /></a>
+            {% endfor %}
         </div>
     </div>
-    <!--<div class="row">-->
-        <!--<div class="col-sm-6">-->
-            <!--{% if page.description_array %}-->
-            <!--<script>-->
-                <!--var descriptions = {{ page.description_array }}-->
-                <!--for (var i=0; i < descriptions.length; i++) {-->
-                    <!--console.log(descriptions[i]);-->
-                <!--}-->
-            <!--</script>-->
-            <!--{% else %}-->
-
-            <!--{% endif %}-->
-        <!--</div>-->
-    <!--</div>-->
 </div>

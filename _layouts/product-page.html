@@ -9,7 +9,7 @@ layout: default
     <div class="row">
         <div class="col-sm-6">
             {% if page.images %}
-            <img style="width:100%;" src={{ page.images[0] }} />
+            <img id="main-prod-img" style="width:100%;" src={{ page.images[0] }} />
             {% else %}
             <div>Image Coming Soon</div>
             {% endif %}
@@ -26,9 +26,17 @@ layout: default
                 <li>{{ item }}</li>
                 {% endfor %}
             </ul>
-            {% for img in page.images %}
-            <a href="#"><img style="width:30%" src={{ img }} /></a>
-            {% endfor %}
+            <div>
+                {% for img in page.images %}
+                <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%" src={{ img }} /></a>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+    function changeImage(img) {
+        document.getElementById("main-prod-img").src = img;
+    }
+</script>

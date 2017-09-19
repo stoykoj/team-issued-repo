@@ -1,0 +1,14 @@
+a.product-link {
+    color: black;
+    font-size: 20px;
+}
+
+a.product-link:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 0.6;
+}
+
+.center-text {
+    text-align: center;
+}

@@ -14,13 +14,17 @@ layout: default
             <div>Image Coming Soon</div>
             {% endif %}
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             {% if page.title %}
             <h3><b>{{ page.title }}</b></h3>
             {% else %}
             <div>Title Coming Soon</div>
             {% endif %}
             </br>
+            {% if page.prod_size %}
+            <div><b>Size:</b> {{ page.prod_size }}</div>
+            </br>
+            {% endif %}
             <ul>
                 {% for item in page.description_array %}
                 <li>{{ item }}</li>
@@ -28,7 +32,7 @@ layout: default
             </ul>
             <div>
                 {% for img in page.images %}
-                <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%" src={{ img }} /></a>
+                <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%;" class="swatch mute" id="{{ img }}" src={{ img }} /></a>
                 {% endfor %}
             </div>
         </div>
@@ -36,7 +40,21 @@ layout: default
 </div>
 
 <script>
+    onload = function() {
+        var main_img = "{{ page.images[0] }}";
+        document.getElementById(main_img).classList.remove("mute");
+    }
     function changeImage(img) {
+        var swatches = document.getElementsByClassName("swatch");
+        for (var i=0; i < swatches.length; i++) {
+            swatches.item(i).classList.add("mute");
+        }
         document.getElementById("main-prod-img").src = img;
+        document.getElementById(img).classList.remove("mute");
     }
 </script>
+<style>
+    .mute {
+        opacity: 0.6;
+    }
+</style>

@@ -24,6 +24,10 @@ a.black-link:hover {
     padding-bottom: 10px;
 }
 
+.mute {
+    opacity: 0.6;
+}
+
 .full {
     width: 100%;
 }

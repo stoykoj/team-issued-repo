@@ -2,11 +2,11 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-a.black-link {
+.black-link {
     color: black;
 }
 
-a.black-link:hover {
+.black-link:hover {
     text-decoration: none;
     color: black;
     opacity: 0.6;

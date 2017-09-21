@@ -35,9 +35,12 @@ layout: default
                 {% endfor %}
             </ul>
             <div>
-                {% for img in page.images %}
-                <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%;" class="swatch mute" id="{{ img }}" src={{ img }} /></a>
-                {% endfor %}
+                {% assign size = page.images | size  %}
+                {% if size > 1 %}
+                    {% for img in page.images %}
+                    <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%;" class="swatch mute" id="{{ img }}" src={{ img }} /></a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>

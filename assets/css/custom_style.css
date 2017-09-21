@@ -12,11 +12,11 @@ body {
     opacity: 0.6;
 }
 
-li.active > a.black-link {
+li.active > a.no-opacity-change.black-link {
     background-color: #737477 !important;
 }
 
-li > a.black-link:hover {
+a.no-opacity-change.black-link:hover {
     opacity: 1.0 !important;
 }
 

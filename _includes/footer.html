@@ -12,12 +12,13 @@
                     <h3> Contact </h3>
                     <ul>
                         <li>
-                            <button class="btn bg-gray" type="button" href="mailto:teamissuedltd@gmail.com">teamissuedltd@gmail.com  <i class="fa fa-long-arrow-right"> </i> </button>
+                            <button class="btn bg-gray black-link" type="button" onclick="openEmail()">teamissuedltd@gmail.com  <i class="fa fa-long-arrow-right"> </i> </button>
+                            <a id="mailto" href="mailto:teamissuedltd@gmail.com" style="display:none;"></a>
                         </li>
                     </ul>
                     <ul class="social">
-                        <li> <a href="https://www.instagram.com/teamissuedltd/"> <i class=" fa fa-instagram">   </i> </a> </li>
-                        <li> <a href="https://www.facebook.com/teamissuedltd/?ref=br_rs"> <i class="fa fa-facebook">   </i> </a> </li>
+                        <li> <a href="https://www.instagram.com/teamissuedltd/" target="_blank"> <i class=" fa fa-instagram">   </i> </a> </li>
+                        <li> <a href="https://www.facebook.com/teamissuedltd/?ref=br_rs" target="_blank"> <i class="fa fa-facebook">   </i> </a> </li>
                     </ul>
                 </div>
             </div>
@@ -28,4 +29,9 @@
     <!--/.footer-->
 </footer>
 
+<script>
+    function openEmail() {
+        document.getElementById("mailto").click();
+    }
+</script>
 

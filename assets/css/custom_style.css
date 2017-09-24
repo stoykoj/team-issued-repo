@@ -36,6 +36,18 @@ li > a.black-link:hover {
     padding-bottom: 10px;
 }
 
+button.navbar-toggle {
+    margin-top: 4%;
+}
+
+.navbar-nav {
+    margin-top: 1%;
+}
+
+.mute {
+    opacity: 0.6;
+}
+
 .full {
     width: 100%;
 }

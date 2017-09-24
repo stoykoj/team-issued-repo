@@ -5,8 +5,8 @@ layout: default
 <div class="container" style="margin-bottom:10%;">
     <div class="row">
         <nav class="breadcrumb">
-            <a class="breadcrumb-item black-link" href="{{ site.baseurl }}/index.html">Home</a> >
-            <a class="breadcrumb-item black-link" href="{{ site.baseurl }}/{{ page.prod_category }}/index.html">{{ page.prod_category }}</a> >
+            <a class="breadcrumb-item black-link" href="{{ site.baseurl }}/">Home</a> >
+            <a class="breadcrumb-item black-link" href="{{ site.baseurl }}/{{ page.prod_category | downcase }}/">{{ page.prod_category }}</a> >
             <span class="breadcrumb-item active">{{ page.title }}</span>
         </nav>
     </div>
@@ -35,9 +35,12 @@ layout: default
                 {% endfor %}
             </ul>
             <div>
-                {% for img in page.images %}
-                <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%;" class="swatch mute" id="{{ img }}" src={{ img }} /></a>
-                {% endfor %}
+                {% assign size = page.images | size  %}
+                {% if size > 1 %}
+                    {% for img in page.images %}
+                    <a href="#" onclick="changeImage('{{ img }}')"><img style="width:30%;" class="swatch mute" id="{{ img }}" src={{ img }} /></a>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -57,8 +60,3 @@ layout: default
         document.getElementById(img).classList.remove("mute");
     }
 </script>
-<style>
-    .mute {
-        opacity: 0.6;
-    }
-</style>
